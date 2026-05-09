@@ -15,4 +15,17 @@ public class ProductoService {
     public List<Producto> listar() {
         return new ArrayList<>(productos);
     }
+
+    // ✅ PASO 22 - Eliminar
+    public void eliminar(String nombre) {
+        productos.removeIf(p -> p.getNombre().equalsIgnoreCase(nombre));
+    }
+
+    // ✅ PASO 24 - Buscar
+    public Producto buscar(String nombre) {
+        for (Producto p : productos) {
+            if (p.getNombre().equalsIgnoreCase(nombre)) return p;
+        }
+        return null;
+    }
 }
